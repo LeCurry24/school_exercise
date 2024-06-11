@@ -1,10 +1,10 @@
+from sqlmodel import Field, Relationship
 from .base import Base
 
-class Enrollment(Base, table=True):
+class Enrollments(Base, table=True):
     __tablename__ = "enrollments"
 
-    student: str
-    course: str
+    student_id: int | None = Field(default=None, foreign_key="students.id")
+    course_id: int | None = Field(default=None, foreign_key="courses.id")
 
-    def __repr__(self):
-        return f"<executive {self.name!r}>"
+   

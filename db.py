@@ -8,5 +8,5 @@ def init_db():
     SQLmodel.metadata.create_call(engine)
 
 def get_session():
-    with Session(engine) as Session:
-        yield Session
+    with Session(engine) as session:
+        yield session       

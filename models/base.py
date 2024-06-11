@@ -7,3 +7,4 @@ class Base(SQLModel):
         index=True,
         nullable=False
     )
+    

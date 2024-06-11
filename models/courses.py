@@ -1,6 +1,6 @@
 from .base import Base
 
-class Course(Base, table=True):
+class Courses(Base, table=True):
     __tablename__ = "courses"
 
     name: str

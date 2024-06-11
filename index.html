@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crud U Enrollment</h1>
+    <div id='students'></div>
+    <div id="courses"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            fetchstudents();
+        });
+        
+        
+
+        async function fetchstudents() {
+            const response = await fetch('http://localhost:8000/students');
+            const students = await response.json();
+            const studensEL = document.querySelector('#students');
+    
+            students.map(student => {
+                const paragraph = document.createElement('p');
+                paragraph.innerText = student.name;
+                studensEL.appendchild(paragraph);
+            })
+
+        }
+    </script>
+</body>
+</html>
